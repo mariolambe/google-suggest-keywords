@@ -32,7 +32,8 @@ if st.button("Get Suggestions"):
             suggestions = get_google_suggestions(keyword, suffixes)
         if suggestions:
             st.write("Suggestions (alphabetically sorted):")
-            st.write(suggestions)
+            for suggestion in suggestions:
+                st.write(suggestion)
             
             # Convert suggestions to DataFrame for download
             df = pd.DataFrame(suggestions, columns=["Suggestions"])
